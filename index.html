@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+	
+
+<head>
+
+	   <meta charset="utf-8" />
+
+           <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+
+       <meta http-equiv="Content-Security-Policy" 
+            default-src 'self';
+            connect-src *;
+            style-src 'self' data: chrome-extension-resource: 'unsafe-inline';
+            img-src 'self' data: chrome-extension-resource:;
+            frame-src 'self' data: chrome-extension-resource:;
+            font-src 'self' data: chrome-extension-resource:;
+            media-src *;>
+
+
+		<!-- Begin: Android Meta Tags -->
+		<meta name="mobile-web-app-capable" content="yes" />
+		<meta name="theme-color" content="#333333" /> <!-- Status bar color --> 
+
+	
+		<link rel="manifest" href="assets/custom/favicons/manifest.json" />
+		<!-- End: Android Meta Tags -->
+
+		<!-- Begin: Stylesheets -->
+		<link rel="stylesheet" href="assets/vendor/framework7/css/framework7.material.min.css" />
+		<link rel="stylesheet" href="assets/vendor/framework7/css/framework7.material.colors.min.css" />
+		<link rel="stylesheet" href="assets/vendor/framework7-plugins/keypad/framework7.keypad.min.css" />
+		<link rel="stylesheet" href="assets/vendor/framework7-plugins/indexed-list/framework7.indexed-list.min.css" />
+		<link rel="stylesheet" href="assets/vendor/framework7-plugins/toast/toast.css" />
+		<link rel="stylesheet" href="assets/vendor/framework7-plugins/tour-guide/tour-guide.css" />
+		<link rel="stylesheet" href="assets/vendor/font-awesome/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="assets/vendor/hamburgers/hamburgers.min.css" />
+		<link rel="stylesheet" href="assets/vendor/material-icons/material-icons.css" />
+		<link rel="stylesheet" href="assets/vendor/pattern-lock/patternLock.css" />
+		<link rel="stylesheet" href="assets/vendor/rateyo/jquery.rateyo.min.css" />
+		<link rel="stylesheet" href="assets/vendor/tooltipster/css/tooltipster.bundle.min.css" />
+		<link rel="stylesheet" href="assets/vendor/tooltipster/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-borderless.min.css" />
+		<link rel="stylesheet" href="assets/vendor/webgradients/webgradients.css" />
+
+		<link rel="stylesheet" href="assets/vendor/nectar/nectar.css" />
+
+		<link rel="stylesheet" href="assets/custom/css/components.css" />
+		<link rel="stylesheet" href="assets/custom/css/pages.css" />
+		<!-- End: Stylesheets -->
+
+		<title>Famous Quotes</title>
+	</head>
+
+	<body class="theme-teal">
+		<div class="statusbar-overlay"></div>
+		<div class="panel-overlay"></div>
+
+		<!-- Begin: Left Side Panel -->
+		<div class="panel panel-left panel-reveal">
+			<div class="panel-header">
+				<div class="user-info">
+					<img class="img-circle user-photo" src="assets/images/sidebar.jpg" width="150" height="150" alt="" />
+					<div class="user-name">Famous Quotes</div>
+					<!-- <div class="user-location">
+						<span>India</span>
+					</div> -->
+				</div>
+			</div>
+
+			<div class="list-block no-hairlines no-hairlines-between">
+				<ul>
+					<li>
+						<a href="home.html" class="item-link close-panel">
+							<div class="item-content">
+								<div class="item-media">
+									<img src="assets/custom/img/home.png" width="24" alt="Home" />
+								</div>
+								<div class="item-inner">
+									<div class="item-title">Home</div>
+								</div>
+							</div>
+						</a>
+					</li>
+
+					<li>
+						<a class="item-link close-panel"  onClick="window.location.replace('https://play.google.com/store/apps/details?id=com.devsun.famousquotes')" >
+							<div class="item-content">
+								<div class="item-media">
+									<img src="assets/custom/img/components.png" width="24" alt="Rate" />
+								</div>
+								<div class="item-inner">
+									<div class="item-title">Rate</div>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#" onClick="otherShare()" class="item-link close-panel" data-action="share-app">
+							<div class="item-content">
+								<div class="item-media">
+									<img src="assets/custom/img/share.png" width="24" alt="Share" />
+								</div>
+								<div class="item-inner">
+									<div class="item-title">Share</div>
+								</div>
+							</div>
+						</a>
+					</li>
+<!-- 
+					<li>
+						<a class="item-link close-panel" target="_system" href="mailto:globalpromotionhub@gmail.com">
+							<div class="item-content">
+								<div class="item-media">
+									<img src="assets/custom/img/pages.png" width="24" alt="Feedback" />
+								</div>
+								<div class="item-inner">
+									<div class="item-title">Feedback</div>
+								</div>
+							</div>
+						</a>
+					</li>
+					 -->
+				
+				
+					<li>
+						<a class="item-link close-panel"  onClick="window.open('https://play.google.com/store/apps/developer?id=Devsun')" >
+							<div class="item-content">
+								<div class="item-media">
+									<img src="assets/custom/img/settings.png" width="24" alt="More apps" />
+								</div>
+								<div class="item-inner">
+									<div class="item-title">More apps</div>
+								</div>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- End: Left Side Panel -->
+
+	
+
+		<div class="views">
+			<div class="view view-main">
+				<div class="pages navbar-fixed">
+					<div data-page="splash-screen" class="page no-navbar">
+						<!-- Begin: Page Content -->
+            <div class="page-content">
+							<div class="splash" style="background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);">
+								<span id="logo" style='margin-top: 27%;'>
+										<img src="img/rateus.png" class="img-responsive">
+										<br>
+										<h2>Thank you for the time you spent with us!</h2>
+							<button type="button" onClick="window.location.replace('https://play.google.com/store/apps/details?id=com.devsun.famousquotes')" class="button button-block button-fill button-round gradient-sunny-morning">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rate us&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button><br>
+							<button type="button" onClick="window.open('https://play.google.com/store/apps/developer?id=Devsun')" class="button button-block button-fill button-round gradient-sunny-morning">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;More Apps &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+
+									</span>
+								<div class="splash-preloader">
+									<span class="preloader preloader-yellow"></span>
+								</div>
+							</div>
+						</div>
+						<!-- End: Page Content -->
+          </div>
+        </div>
+			</div>
+		</div>
+
+
+
+     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>  
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/SocialSharing.js"></script>
+
+
+		<!-- Begin: Scripts -->
+
+		<script type="text/javascript" src="assets/vendor/jquery/jquery-2.2.4.min.js"></script>
+		<script type="text/javascript" src="assets/vendor/framework7/js/framework7.min.js"></script>
+		<script type="text/javascript" src="assets/vendor/framework7-plugins/keypad/framework7.keypad.min.js"></script>
+		<script type="text/javascript" src="assets/vendor/framework7-plugins/indexed-list/framework7.indexed-list.min.js"></script>
+		<script type="text/javascript" src="assets/vendor/framework7-plugins/toast/toast.js"></script>
+		<script type="text/javascript" src="assets/vendor/framework7-plugins/tour-guide/tour-guide.js"></script>
+		<script type="text/javascript" src="assets/vendor/gmaps/gmaps.min.js"></script>
+		<script type="text/javascript" src="assets/vendor/jquery-validation/jquery.validate.min.js"></script>
+		<script type="text/javascript" src="assets/vendor/jquery-validation/additional-methods.min.js"></script>
+		<script type="text/javascript" src="assets/vendor/pattern-lock/patternLock.min.js"></script>
+		<script type="text/javascript" src="assets/vendor/rateyo/jquery.rateyo.min.js"></script>		
+		<script type="text/javascript" src="assets/vendor/snazzy-maps/snazzy-maps.js"></script>
+		<script type="text/javascript" src="assets/vendor/tooltipster/js/tooltipster.bundle.min.js"></script>
+		<script type="text/javascript" src="assets/vendor/vivus/vivus.min.js"></script>
+		<script type="text/javascript" src="assets/vendor/geocomplete/jquery.geocomplete.min.js"></script>
+
+		<script type="text/javascript" src="assets/custom/js/init.js"></script>
+
+		<script type="text/javascript" src="assets/vendor/nectar/nectar.js"></script>
+
+		<script type="text/javascript" src="assets/custom/js/components.js"></script>
+		<script type="text/javascript" src="assets/custom/js/pages.js"></script>
+		<script type="text/javascript" src="assets/custom/js/themes.js"></script>
+
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','../../www.google-analytics.com/analytics.js','ga');
+
+			ga('create', '', 'auto');
+			ga('set', '', '');
+		</script>
+
+		<script type="text/javascript">
+			'use strict';
+
+			(function() {
+				myApp.init();
+			})();
+		</script>
+		<!-- End: Scripts -->
+
+	</body>
+
+</html>
