@@ -345,11 +345,12 @@ myApp.onPageInit('infinite-scroll', function(page) {
 		loading = true;
 		/* Emulate 1s Loading */
        // if(window.AdMob) 
-		
+		if(AdMob) AdMob.prepareInterstitial( {adId:admobid.interstitial, autoShow:false} );
+		if(AdMob) AdMob.showInterstitial();
+
 		setTimeout(function() {
 			/* Reset Loading Flag */
 			loading = false;
-if(AdMob) AdMob.showInterstitial();
 	$.ajax({
           url:'https://www.globalpromotionhub.com/Android_App/life_quotes/top10.php',
         success:function(data)
