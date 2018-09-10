@@ -24,9 +24,8 @@ if(AdMob) AdMob.createBanner( {
     adId:admobid.banner, 
     position:AdMob.AD_POSITION.BOTTOM_CENTER, 
     autoShow:true} );
-  if(AdMob) AdMob.prepareInterstitial( {
-    adId:admobid.interstitial,
-     autoShow:false} );
+if(AdMob) AdMob.prepareInterstitial( {adId:admobid.interstitial, autoShow:false} );
+
  
 }
   function onDeviceReady(){
