@@ -29,8 +29,8 @@ function twitterShare(){
    window.plugins.socialsharing.share('Life best motivational quotes.\nDownload the App Now!\nhttps://play.google.com/store/apps/details?id=com.devsun.famousquotes', null, null, null);
   };
 
- function storyShare(){ 
-   var data = $('.item-title').text();
+ function storyShare(id){ 
+   var data = $('.share'+id).text();
    window.plugins.socialsharing.share('Download app \n https://play.google.com/store/apps/details?id=com.devsun.famousquotes \n\n'+data, null, null, null);
   };
 

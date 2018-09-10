@@ -340,14 +340,16 @@ myApp.onPageInit('infinite-scroll', function(page) {
 		/* Exit, If Loading in Progress */
 		if (loading) return;
 
+
 		/* Set Loading Flag */
 		loading = true;
-if(window.AdMob) AdMob.showInterstitial();
-
 		/* Emulate 1s Loading */
+       // if(window.AdMob) 
+		AdMob.showInterstitial();
 		setTimeout(function() {
 			/* Reset Loading Flag */
 			loading = false;
+
 	$.ajax({
           url:'https://www.globalpromotionhub.com/Android_App/life_quotes/top10.php',
         success:function(data)
@@ -357,7 +359,7 @@ if(window.AdMob) AdMob.showInterstitial();
               $.each( data, function( key, value ) {
           	 var randomNumber = Math.floor(Math.random() * 20);
 
-                $(".list2-block ul").append('<li><div class="item-content card background'+randomNumber+'"><div class="item-inner"><div class="item-title">'+value.quote+'<p>('+value.name+')</p><a  onClick="storyShare()" class="link"><i class="fa fa-share"></i><span>Share</span></a></div></div></div></li>');
+                $(".list2-block ul").append('<li><div class="item-content card background'+randomNumber+'"><div class="item-inner"><div class="item-title share'+value.id+'">'+value.quote+'<p>('+value.name+')</p><a  onClick="storyShare('+value.id+')" class="link"><i class="fa fa-share"></i><span>Share</span></a></div></div></div></li>');
                });
           }
           else
@@ -1378,7 +1380,7 @@ myApp.onPageInit('virtual-list', function(page) {
               $.each( data, function( key, value ) {
           	 var randomNumber = Math.floor(Math.random() * 20);
 
-                $(".list2-block ul").append('<li><div class="item-content card background'+randomNumber+'"><div class="item-inner"><div class="item-title">'+value.quote+'<p >('+value.name+')</p><a  onClick="storyShare()" class="link"><i class="fa fa-share"></i><span>Share</span></a></div></div></div></li>');
+                $(".list2-block ul").append('<li><div class="item-content card background'+randomNumber+'"><div class="item-inner"><div class="item-title share'+value.id+'">'+value.quote+'<p >('+value.name+')</p><a  onClick="storyShare('+value.id+')" class="link"><i class="fa fa-share"></i><span>Share</span></a></div></div></div></li>');
                });
           }
           else
