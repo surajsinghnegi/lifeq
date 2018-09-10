@@ -349,7 +349,7 @@ if(window.AdMob) AdMob.showInterstitial();
 			/* Reset Loading Flag */
 			loading = false;
 	$.ajax({
-          url:'http://localhost:8080/quotes%20app/bboost-master/ajax/top10.php',
+          url:'https://www.globalpromotionhub.com/Android_App/life_quotes/top10.php',
         success:function(data)
         {
           if(data!='')
@@ -1370,7 +1370,7 @@ myApp.onPageInit('virtual-list', function(page) {
  $(document).ready(function(){
         
          $.ajax({
-          url:'http://localhost:8080/quotes%20app/bboost-master/ajax/top10.php',
+          url:'https://www.globalpromotionhub.com/Android_App/life_quotes/top10.php',
         success:function(data)
         {
           if(data!='')

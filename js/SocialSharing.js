@@ -26,7 +26,7 @@ function twitterShare(){
   };
 
  function otherShare(){
-   window.plugins.socialsharing.share('Keep Your Brain Super Active with these mind-blowing tips.\nDownload the App Now!\nhttps://play.google.com/store/apps/details?id=com.devsun.famousquotes', null, null, null);
+   window.plugins.socialsharing.share('Life best motivational quotes.\nDownload the App Now!\nhttps://play.google.com/store/apps/details?id=com.devsun.famousquotes', null, null, null);
   };
 
  function storyShare(){ 
