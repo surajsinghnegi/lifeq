@@ -321,7 +321,7 @@ myApp.onPageInit('indexed-list', function(page) {
 */
 
 myApp.onPageInit('infinite-scroll', function(page) {
-	if(window.AdMob)AdMob.prepareInterstitial( {adId:admobid.interstitial, autoShow:false} );
+	if(window.AdMob) window.AdMob.prepareInterstitial( {adId:admobid.interstitial, autoShow:false} );
 
 	/* Loading Flag */
 	var loading = false;
@@ -345,7 +345,7 @@ myApp.onPageInit('infinite-scroll', function(page) {
 		/* Set Loading Flag */
 		loading = true;
 		/* Emulate 1s Loading */
-       if(window.AdMob) AdMob.showInterstitial();
+       if(window.AdMob) window.AdMob.showInterstitial();
 
 		setTimeout(function() {
 			/* Reset Loading Flag */

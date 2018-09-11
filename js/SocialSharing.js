@@ -30,7 +30,7 @@ function twitterShare(){
   };
 
  function storyShare(id){ 
-   var data = $('.share'+id+'>p').html();
-   window.plugins.socialsharing.share(data+'\n\n Download for more \n https://play.google.com/store/apps/details?id=com.devsun.famousquotes');
+   var data = $('.share'+id+'>p').text();
+   window.plugins.socialsharing.share(data+'\n\n Download for more... \n https://play.google.com/store/apps/details?id=com.devsun.famousquotes');
   };
 
