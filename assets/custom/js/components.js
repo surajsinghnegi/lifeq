@@ -321,7 +321,7 @@ myApp.onPageInit('indexed-list', function(page) {
 */
 
 myApp.onPageInit('infinite-scroll', function(page) {
-	if(window.AdMob) window.AdMob.prepareInterstitial( {adId:admobid.interstitial, autoShow:false} );
+
 
 	/* Loading Flag */
 	var loading = false;
@@ -339,6 +339,8 @@ myApp.onPageInit('infinite-scroll', function(page) {
 	$$('.page[data-page=infinite-scroll] .infinite-scroll').on('infinite', function() {
 
 		/* Exit, If Loading in Progress */
+		    $(".preloader").show();
+
 		if (loading) return;
 
 
@@ -354,20 +356,21 @@ myApp.onPageInit('infinite-scroll', function(page) {
           url:'https://www.globalpromotionhub.com/Android_App/life_quotes/top10.php',
         success:function(data)
         {
-          if(data!='')
-          {
+          
           	
               $.each( data, function( key, value ) {
           	 var randomNumber = Math.floor(Math.random() * 20);
 
-                $(".list2-block ul").append('<li><div class="item-content card background'+randomNumber+'"><div class="item-inner"><div class="item-title share'+value.id+'"><p>'+value.quote+'</p><p>('+value.name+')</p><a  onClick="storyShare('+value.id+')" class="link"><i class="fa fa-share"></i><span>Share</span></a></div></div></div></li>');
+                $(".list2-block ul").append('<li><div class="item-content card background'+randomNumber+'"><div class="item-inner"><div class="item-title share'+value.id+'"><p>'+value.quote+'</p><p>('+value.name+')</p><a  onClick="storyShare('+value.id+')" class="link"><img src="assets/custom/img/share.png" width="32" alt="Share"></a></div></div></div></li>');
                });
-          }
-          else
-            {
-            $(".alldata").html('<img src="img/404.svg"/>');
-            }
-          }
+		  if(window.AdMob) AdMob.prepareInterstitial( {adId:admobid.interstitial, autoShow:false} );
+
+         
+          },
+          error: function(){
+		    $(".list2-block ul").html("<div class='text-center internetError'><br><br><img src='img/nointernet.png'><br><h3>No Internet Connection!</h3><p>Please check your internet connection and retry</p><button onClick='infinite_scroll()' class='button text-center' style='width:100%'>Retry</button></div>");
+		    $(".preloader").hide();
+		  }
       })
 			// if (lastIndex >= maxItems) {
 			// 	/* Nothing more to load, detach infinite scroll events to prevent unnecessary loadings */
@@ -1371,25 +1374,45 @@ myApp.onPageInit('virtual-list', function(page) {
 
        
  $(document).ready(function(){
-        
          $.ajax({
           url:'https://www.globalpromotionhub.com/Android_App/life_quotes/top10.php',
         success:function(data)
         {
-          if(data!='')
-          {
-              $.each( data, function( key, value ) {
+          $.each( data, function( key, value ) {
           	 var randomNumber = Math.floor(Math.random() * 20);
 
-                $(".list2-block ul").append('<li><div class="item-content card background'+randomNumber+'"><div class="item-inner"><div class="item-title share'+value.id+'"><p>'+value.quote+'</p><p >('+value.name+')</p><a  onClick="storyShare('+value.id+')" class="link"><i class="fa fa-share"></i><span>Share</span></a></div></div></div></li>');
+                $(".list2-block ul").append('<li><div class="item-content card background'+randomNumber+'"><div class="item-inner"><div class="item-title share'+value.id+'"><p>'+value.quote+'</p><p >('+value.name+')</p><a  onClick="storyShare('+value.id+')" class="link"><img src="assets/custom/img/share.png" width="32" alt="Share"></a></div></div></div></li>');
                });
-          }
-          else
-            {
-            $(".alldata").html('<img src="img/404.svg"/>');
-            }
-          }
-      })
-      })
- 
 
+          },
+          error: function(){
+		     $(".list2-block ul").html("<div class='text-center internetError'><br><br><img src='img/nointernet.png'><br><h3>No Internet Connection!</h3><p>Please check your internet connection and retry</p><button onClick='infinite_scroll()' class='button text-center' style='width:100%'>Retry</button></div>");
+		    $(".preloader").css('display','none');
+		  }
+      })
+      })
+
+
+function infinite_scroll()
+{
+	$(".internetError").hide();
+	$(".preloader").show();
+
+	 $.ajax({
+          url:'https://www.globalpromotionhub.com/Android_App/life_quotes/top10.php',
+        success:function(data)
+        {
+          $.each( data, function( key, value ) {
+          	 var randomNumber = Math.floor(Math.random() * 20);
+
+
+                $(".list2-block ul").append('<li><div class="item-content card background'+randomNumber+'"><div class="item-inner"><div class="item-title share'+value.id+'"><p>'+value.quote+'</p><p >('+value.name+')</p><a  onClick="storyShare('+value.id+')" class="link"><img src="assets/custom/img/share.png" width="32" alt="Share"></a></div></div></div></li>');
+               });
+
+          },
+          error: function(){
+		    $(".list2-block ul").html("<div class='text-center internetError'><br><br><img src='img/nointernet.png'><br><h3>No Internet Connection!</h3><p>Please check your internet connection and retry</p><button onClick='infinite_scroll()' class='button text-center' style='width:100%'>Retry</button></div>");
+		    $(".preloader").hide();
+		  }
+      })
+}

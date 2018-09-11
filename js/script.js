@@ -25,7 +25,6 @@ if(AdMob) AdMob.createBanner( {
     position:AdMob.AD_POSITION.BOTTOM_CENTER, 
     autoShow:true} );
 if(AdMob) AdMob.prepareInterstitial( {adId:admobid.interstitial, autoShow:false} );
-setInterval(window.AdMob.showInterstitial, 1*60*100);
  
 }
   function onDeviceReady(){
