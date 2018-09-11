@@ -363,12 +363,12 @@ myApp.onPageInit('infinite-scroll', function(page) {
 
                 $(".list2-block ul").append('<li><div class="item-content card background'+randomNumber+'"><div class="item-inner"><div class="item-title share'+value.id+'"><p>'+value.quote+'</p><p>('+value.name+')</p><a  onClick="storyShare('+value.id+')" class="link"><img src="assets/custom/img/share.png" width="32" alt="Share"></a></div></div></div></li>');
                });
-		  if(window.AdMob) AdMob.prepareInterstitial( {adId:admobid.interstitial, autoShow:false} );
 
+			 adSetter();
          
           },
           error: function(){
-		    $(".list2-block ul").html("<div class='text-center internetError'><br><br><img src='img/nointernet.png'><br><h3>No Internet Connection!</h3><p>Please check your internet connection and retry</p><button onClick='infinite_scroll()' class='button text-center' style='width:100%'>Retry</button></div>");
+		    $(".list2-block ul").html("<div class='text-center internetError'><br><br><br><br><img src='img/nointernet.png'><br><h3>No Internet Connection!</h3><p>Please check your internet connection and retry</p><button onClick='infinite_scroll()' class='button text-center' style='width:100%'>Retry</button></div>");
 		    $(".preloader").hide();
 		  }
       })
@@ -1386,7 +1386,7 @@ myApp.onPageInit('virtual-list', function(page) {
 
           },
           error: function(){
-		     $(".list2-block ul").html("<div class='text-center internetError'><br><br><img src='img/nointernet.png'><br><h3>No Internet Connection!</h3><p>Please check your internet connection and retry</p><button onClick='infinite_scroll()' class='button text-center' style='width:100%'>Retry</button></div>");
+		     $(".list2-block ul").html("<div class='text-center internetError'><br><br><br><br><img src='img/nointernet.png'><br><h3>No Internet Connection!</h3><p>Please check your internet connection and retry</p><button onClick='infinite_scroll()' class='button text-center' style='width:100%'>Retry</button></div>");
 		    $(".preloader").css('display','none');
 		  }
       })
@@ -1411,7 +1411,7 @@ function infinite_scroll()
 
           },
           error: function(){
-		    $(".list2-block ul").html("<div class='text-center internetError'><br><br><img src='img/nointernet.png'><br><h3>No Internet Connection!</h3><p>Please check your internet connection and retry</p><button onClick='infinite_scroll()' class='button text-center' style='width:100%'>Retry</button></div>");
+		    $(".list2-block ul").html("<div class='text-center internetError'><br><br><br><br><img src='img/nointernet.png'><br><h3>No Internet Connection!</h3><p>Please check your internet connection and retry</p><button onClick='infinite_scroll()' class='button text-center' style='width:100%'>Retry</button></div>");
 		    $(".preloader").hide();
 		  }
       })
