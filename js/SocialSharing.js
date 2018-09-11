@@ -26,11 +26,11 @@ function twitterShare(){
   };
 
  function otherShare(){
-   window.plugins.socialsharing.share('Life best motivational quotes.\nDownload the App Now!\nhttps://play.google.com/store/apps/details?id=com.devsun.famousquotes', null, null, null);
+   window.plugins.socialsharing.share('To read life best motivational quotes.\nDownload the App Now!\nhttps://play.google.com/store/apps/details?id=com.devsun.famousquotes', null, null, null);
   };
 
  function storyShare(id){ 
-   var data = $('.share'+id+'>p').text();
-   window.plugins.socialsharing.share('Download app \n https://play.google.com/store/apps/details?id=com.devsun.famousquotes \n\n'+data, null, null, null);
+   var data = $('.share'+id+'>p').html();
+   window.plugins.socialsharing.share(data, null, null, null,'\n\n Download for more \n https://play.google.com/store/apps/details?id=com.devsun.famousquotes');
   };
 

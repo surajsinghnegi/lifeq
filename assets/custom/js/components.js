@@ -344,8 +344,7 @@ myApp.onPageInit('infinite-scroll', function(page) {
 		/* Set Loading Flag */
 		loading = true;
 		/* Emulate 1s Loading */
-       if(window.AdMob) 
-		 AdMob.prepareInterstitial( {adId:admobid.interstitial, autoShow:true} );
+       if(window.AdMob) AdMob.showInterstitial();
 
 		setTimeout(function() {
 			/* Reset Loading Flag */
