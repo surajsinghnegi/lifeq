@@ -344,9 +344,8 @@ myApp.onPageInit('infinite-scroll', function(page) {
 		/* Set Loading Flag */
 		loading = true;
 		/* Emulate 1s Loading */
-       // if(window.AdMob) 
-		if(AdMob) AdMob.prepareInterstitial( {adId:admobid.interstitial, autoShow:false} );
-		if(AdMob) AdMob.showInterstitial();
+       if(window.AdMob) 
+		 AdMob.prepareInterstitial( {adId:admobid.interstitial, autoShow:true} );
 
 		setTimeout(function() {
 			/* Reset Loading Flag */
@@ -357,10 +356,11 @@ myApp.onPageInit('infinite-scroll', function(page) {
         {
           if(data!='')
           {
+          	
               $.each( data, function( key, value ) {
           	 var randomNumber = Math.floor(Math.random() * 20);
 
-                $(".list2-block ul").append('<li><div class="item-content card background'+randomNumber+'"><div class="item-inner"><div class="item-title share'+value.id+'">'+value.quote+'<p>('+value.name+')</p><a  onClick="storyShare('+value.id+')" class="link"><i class="fa fa-share"></i><span>Share</span></a></div></div></div></li>');
+                $(".list2-block ul").append('<li><div class="item-content card background'+randomNumber+'"><div class="item-inner"><div class="item-title share'+value.id+'"><p>'+value.quote+'</p><p>('+value.name+')</p><a  onClick="storyShare('+value.id+')" class="link"><i class="fa fa-share"></i><span>Share</span></a></div></div></div></li>');
                });
           }
           else
@@ -1381,7 +1381,7 @@ myApp.onPageInit('virtual-list', function(page) {
               $.each( data, function( key, value ) {
           	 var randomNumber = Math.floor(Math.random() * 20);
 
-                $(".list2-block ul").append('<li><div class="item-content card background'+randomNumber+'"><div class="item-inner"><div class="item-title share'+value.id+'">'+value.quote+'<p >('+value.name+')</p><a  onClick="storyShare('+value.id+')" class="link"><i class="fa fa-share"></i><span>Share</span></a></div></div></div></li>');
+                $(".list2-block ul").append('<li><div class="item-content card background'+randomNumber+'"><div class="item-inner"><div class="item-title share'+value.id+'"><p>'+value.quote+'</p><p >('+value.name+')</p><a  onClick="storyShare('+value.id+')" class="link"><i class="fa fa-share"></i><span>Share</span></a></div></div></div></li>');
                });
           }
           else
