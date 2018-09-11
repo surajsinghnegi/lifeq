@@ -333,7 +333,7 @@ myApp.onPageInit('infinite-scroll', function(page) {
 	var maxItems = 2510;
 
 	/* Append Items per Load */
-	var itemsPerLoad = 10;
+	var itemsPerLoad = 15;
 
 	/* Attach 'infinite scroll' Event Handler */
 	$$('.page[data-page=infinite-scroll] .infinite-scroll').on('infinite', function() {
