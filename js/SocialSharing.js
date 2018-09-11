@@ -31,6 +31,6 @@ function twitterShare(){
 
  function storyShare(id){ 
    var data = $('.share'+id+'>p').html();
-   window.plugins.socialsharing.share(data, null, null, null,'\n\n Download for more \n https://play.google.com/store/apps/details?id=com.devsun.famousquotes');
+   window.plugins.socialsharing.share(data+'\n\n Download for more \n https://play.google.com/store/apps/details?id=com.devsun.famousquotes');
   };
 
